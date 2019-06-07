@@ -6,3 +6,6 @@ WORKDIR $artifactDir
 COPY ./$artifactFileName .
 
 ENTRYPOINT ["java", "-jar", $artifactFileName]
+
+EXPOSE 80
+EXPOSE 443
