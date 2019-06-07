@@ -1,11 +1,14 @@
 FROM openjdk:8
 
-ARG artifactDir
-ARG artifactFileName
-WORKDIR $artifactDir
-COPY ./$artifactFileName .
-
-ENTRYPOINT ["java", "-jar", $artifactFileName]
+VOLUME /tmp
 
 EXPOSE 80
 EXPOSE 443
+
+ARG jarPath
+
+WORKDIR /opt/app/
+
+COPY ${jarPath} app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
