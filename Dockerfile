@@ -2,8 +2,7 @@ FROM openjdk:8
 
 VOLUME /tmp
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80 443
 
 ARG jarPath
 
